@@ -1,0 +1,66 @@
+.navbar
+   position fixed
+   top 0
+   left 0
+   right 0
+   display flex
+   justify-content space-around
+   align-items center
+   min-height 65px
+   max-height 100vh
+   background #fff
+   box-shadow 0 4px 10px rgba(1, 2, 2, .1)
+   padding 15px
+   overflow hidden
+   &__item
+      display flex
+   &__menu
+      width 38%
+      &_left
+         order 1
+      &_right
+         order 3
+   &__brand
+      font-size 24px
+      order 2
+   &__menuButton
+      position fixed
+      top 13px
+      right 15px
+      z-index 10
+      display none
+
+@media (max-width 992px)
+  .navbar
+    flex-direction column
+    justify-content flex-start
+    min-height 56px
+    height 56px
+    box-shadow none
+    &__menu
+      width 100%
+      transform translateX(100%)
+      transition transform .4s
+    &.isOpen
+      height auto
+      overflow-y auto
+      .navbar__menu
+        transform translateX(0)
+      &_left
+        order 2
+        margin-top 40px
+      &_right
+        order 3
+    &__brand
+      order 1
+      position fixed
+      width 100%
+      top 0
+      left 0
+      right 0
+      padding 10px 15px
+      background #fff
+      z-index 1
+      box-shadow 0 4px 10px rgba(1, 2, 2, .1)
+    &__menuButton
+      display block
